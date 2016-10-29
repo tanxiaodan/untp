@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 setup(
     name = 'untp',
-    version = '1.0.4',
+    version = '1.0.5',
     keywords = ('untp', 'texturepacker'),
     description = 'A command line tool to split TexturePacker publish file.',
     license = 'MIT License',
@@ -15,10 +15,11 @@ setup(
     url = 'https://github.com/justbilt/untp',
     author = 'justbilt',
     author_email = 'wangbilt@gmail.com',
-    scripts=['untp.py'],
-    entry_points={
+    packages = find_packages("src"),
+    package_dir = {'':'src'},
+    entry_points = {
         'console_scripts': [
-            'untp = untp:main',
+            'untp = untp.untp:main',
         ],
     }
 )
